@@ -8,3 +8,17 @@ before_install:
 scripts:
     - docker run -e CI=true roaslin/single-client npm run test
  
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: "eu-north-1"
+    app: "single-client"
+    env: "SingleClient-env"
+    bucket-name: "elasticbeanstalk-eu-north-1-300563897675"
+    bucker-path: "single-client"
+    on:
+        branch: master
+
+access_key_id: $AWS_ACCESS_KEY_ID
+secret_access_key:
+    secure: "$AWS_SECRET_ACCESS_KEY"
