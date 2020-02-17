@@ -7,3 +7,11 @@ test('renders learn react link', () => {
   const linkElement = getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test('fake test', () => {
+  expect(2).toBe(2);
+});
+
+test('fake test', () => {
+  expect(3).toBe(3);
+});
